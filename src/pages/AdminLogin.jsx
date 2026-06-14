@@ -21,19 +21,16 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://healthcare-backend-svax.onrender.com/api/admin/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username: credentials.username,
-            password: credentials.password
-          })
-        }
-      );
+      const res = await fetch("https://healthcare-backend-svax.onrender.com/api/admin/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    username: credentials.username,
+    password: credentials.password
+  })
+})
 
       const data = await res.json();
 
