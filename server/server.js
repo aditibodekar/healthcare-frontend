@@ -83,20 +83,37 @@ app.delete("/api/volunteer/:id", async (req, res) => {
 
 /* -------------------- ADMIN LOGIN API (FIXED) -------------------- */
 app.post("/api/admin/login", (req, res) => {
-  const { username, password } = req.body;
+  try {
+    console.log("LOGIN REQUEST:", req.body);
 
-  // demo login (you can later connect MongoDB users)
-  if (username === "admin" && password === "1234") {
-    return res.json({
-      success: true,
-      message: "Login successful"
+    const { username, password } = req.body || {};
+
+    if (!username || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Username and password required"
+      });
+    }
+
+    if (username === "admin" && password === "1234") {
+      return res.json({
+        success: true,
+        message: "Login successful"
+      });
+    }
+
+    return res.status(401).json({
+      success: false,
+      message: "Invalid credentials"
+    });
+
+  } catch (err) {
+    console.error("LOGIN ERROR:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error"
     });
   }
-
-  return res.status(401).json({
-    success: false,
-    message: "Invalid credentials"
-  });
 });
 
 /* -------------------- START SERVER -------------------- */
