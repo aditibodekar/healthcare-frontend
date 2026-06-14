@@ -4,8 +4,8 @@ import "../admin.css";
 
 export default function AdminLogin() {
   const [credentials, setCredentials] = useState({
-    username: "",
-    password: ""
+    username: "admin",
+    password: "1234"
   });
 
   const [loading, setLoading] = useState(false);
