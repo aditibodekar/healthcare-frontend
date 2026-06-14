@@ -78,3 +78,9 @@ app.delete("/api/volunteer/:id", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is working 🚀" });
+});
+app.get("/api/patients", (req, res) => {
+  res.json([{ name: "Test Patient" }]);
+});

@@ -33,7 +33,7 @@ export default function VolunteerForm() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/volunteer", {
+      const res = await fetch("https://healthcare-backend-svax.onrender.com/api/volunteer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
