@@ -8,6 +8,8 @@ export default function AdminLogin() {
     password: ""
   });
 
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -15,6 +17,8 @@ export default function AdminLogin() {
       alert("Please enter username and password");
       return;
     }
+
+    setLoading(true);
 
     try {
       const res = await fetch(
@@ -33,6 +37,8 @@ export default function AdminLogin() {
 
       const data = await res.json();
 
+      console.log("Backend response:", data);
+
       if (res.ok) {
         localStorage.setItem("adminAuth", "true");
         alert("Login successful ✅");
@@ -41,8 +47,10 @@ export default function AdminLogin() {
         alert(data.message || "Invalid credentials ❌");
       }
     } catch (error) {
-      console.error(error);
-      alert("Server error ❌");
+      console.error("Login error:", error);
+      alert("Server not reachable ❌");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -68,7 +76,9 @@ export default function AdminLogin() {
           }
         />
 
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin} disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
       </div>
     </div>
   );
