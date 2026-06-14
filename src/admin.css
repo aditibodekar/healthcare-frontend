@@ -1,0 +1,258 @@
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+background: #ffc0cb36;
+}
+
+.login-box {
+  width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #1d4ed8;
+}
+/* Background */
+.admin-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+}
+
+/* Animated background */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  animation: slideDown 0.8s ease;
+}
+
+.admin-header h1 {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+/* Home Button */
+.home-btn {
+  padding: 25px 60px;   /* width + height control */
+  font-size: 18px;      /* 👈 makes text bigger */
+  font-weight: 700;
+  border: none;
+  border-radius: 70px;
+  background: hsla(97, 93%, 89%, 0.767);
+  backdrop-filter: blur(10px);
+  color: #aee78e73;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  transform: scale(1.08);
+  background: rgba(255,255,255,0.25);
+}
+
+/* Stats Section */
+.stats-container {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.stat-box {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: 0.4s;
+  animation: fadeUp 0.8s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.stat-box h2 {
+  font-size: 50px;
+  margin: 0;
+  color: #38bdf8;
+}
+
+.stat-box p {
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Sections */
+.admin-section {
+  margin-top: 50px;
+}
+
+.admin-section h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+/* Grid */
+.cards-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+/* Cards */
+.admin-card {
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  transition: 0.4s;
+  animation: fadeUp 0.8s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+.admin-card p {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+/* Delete Button */
+.admin-card button {
+  margin-top: 15px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: crimson;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-card button:hover {
+  transform: scale(1.05);
+  background: #ff1744;
+}
+
+/* Loading */
+.loading {
+  color: white;
+  text-align: center;
+  padding: 50px;
+  font-size: 24px;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.admin-header h1 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1e0303;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  letter-spacing: 1px;
+}
+.admin-section h2 {
+  margin-bottom: 20px;
+  font-size: 35px;
+  color: hsl(0, 89%, 7%);
+  
+}
+.admin-card p {
+  color: #230202;
+}
+.stat-box p {
+  margin-top: 10px;
+  color: #160101e6;
+  font-size: 16px;
+  font-weight: 500;
+}
+.admin-section p {
+  color: #101010e6;
+  font-size: 25px;
+}
+.cards-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-grid::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.cards-grid::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 10px;
+}
