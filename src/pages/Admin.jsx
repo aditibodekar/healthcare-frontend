@@ -16,8 +16,8 @@ export default function Admin() {
   const fetchData = async () => {
     try {
       const [pRes, vRes] = await Promise.all([
-        fetch("http://localhost:5000/api/patients"),
-        fetch("http://localhost:5000/api/volunteers")
+        fetch("https://healthcare-backend-svax.onrender.com/api/patients"),
+        fetch("https://healthcare-backend-svax.onrender.com/api/volunteers")
       ]);
 
       const pData = await pRes.json();
@@ -35,7 +35,7 @@ export default function Admin() {
   // Delete patient
   const deletePatient = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/patient/${id}`, {
+      await fetch(`https://healthcare-backend-svax.onrender.com/api/patient/${id}`, {
         method: "DELETE"
       });
 
@@ -48,7 +48,7 @@ export default function Admin() {
   // Delete volunteer
   const deleteVolunteer = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/volunteer/${id}`, {
+      await fetch(`https://healthcare-backend-svax.onrender.com/api/volunteer/${id}`, {
         method: "DELETE"
       });
 
