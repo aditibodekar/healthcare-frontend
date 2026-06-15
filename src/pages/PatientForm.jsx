@@ -34,7 +34,7 @@ export default function PatientForm() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/patient", {
+      const res = await fetch("https://healthcare-backend-svax.onrender.com/api/patient", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
