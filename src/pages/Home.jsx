@@ -17,7 +17,7 @@ export default function Home() {
           <button onClick={() => navigate("/services")}>
             Get Started
           </button>
-          <button onClick={() => navigate("/admin")}>
+          <button onClick={() => navigate("/admin-login")}>
         Go to Admin Dashboard
       </button>
     </div>
